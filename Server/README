@@ -1,0 +1,21 @@
+322675356
+Ibrahim Alyan
+ex2_b
+---Files---
+- threadpool.c: Source file implementing the thread pool functionalities.
+-proxyServer.c: a server that acts as an intermediary for requests from clients seeking resources from other servers.
+---Description---
+HTTP server that handles incoming requests, validates them, forwards valid requests to specified servers, and responds with appropriate error messages. It supports filtering of incoming requests based on predefined criteria stored in a filter file.
+---Functions---
+1. isFilteredl: check if the hostname or IP address is within the filter
+2. bad_request: Handles incoming HTTP requests, validates them, and forwards them to the target server.
+---How to Use---
+1. Compile the program:
+gcc -Wall -o proxyServer proxyServer.c threadpool.c -lpthread
+./proxyServer 8080 1 1 /filter.txt
+---Output---
+The program dynamically dispatches tasks to the thread pool and executes them concurrently. It prints the thread ID for each task execution.
+
+
+
+
