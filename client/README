@@ -1,0 +1,43 @@
+322675356
+Ibrahim Alyan
+Ex1
+---Program fiels---
+cproxy.c     this file contain the function and the main
+---Description---
+The C program establishes an HTTP connection to a remote server, sends a GET request for a specified file, and saves the received response to a local directory structure and send response if file appears in the local filesystem
+---functions---
+1- send_request :  function establishes a TCP socket connection to a specified host and port, constructs an HTTP GET request for a given filepath, sends the request, creates a local directory structure based on the host and filepath, receives the server's response, and saves it to a file. 
+2- parse_url: parses a URL string, extracting its protocol, host, port, and filepath components
+3-count_slashes:  counts the occurrences of the '/' character in a given string (str) and returns the count
+4-send_response:  reads the content of a local file specified
+5-file_exists: check if the file in the local
+6- size_t calculate_request_length : calculate the length
+---How to compile---
+compile: gcc -Wall -o cproxy cproxy.c 
+run: ./cproxy <URL>
+---input---
+gcc -Wall -o cproxy cproxy.c 
+./cproxy http://www.google.com
+---output---
+HTTP request =
+GET / HTTP/1.0
+Host: www.google.com
+
+
+LEN = 40
+HTTP/1.0 200 OK
+Content-Length: 55845
+<the body>
+Total response length: 55879
+---input---   if in local file
+./cproxy http://www.google.com
+---output---
+File is given from local filesystem:
+HTTP/1.0 200 OK
+Content-Length: 96
+Total response length: 130
+
+
+
+
+
